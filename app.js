@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var catRouter = require('./routes/cat');
+var yesnoRouter = require('./routes/yesno');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/cat', catRouter);
+app.use('/yesno', yesnoRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
